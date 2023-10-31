@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20231031 15:31:36.804" rpa="false" schemaversion="4">
+<suite id="s1" name="Testcases" source="D:\Py\RFCoinswitchAPI\Testcases.robot">
+<kw name="Initialize Suite" library="Keywords" type="SETUP">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${LIMIT PRICE}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231031 15:31:37.469" level="INFO">${LIMIT PRICE} = </msg>
+<status status="PASS" starttime="20231031 15:31:37.469" endtime="20231031 15:31:37.469"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${LAST ASKS VALUE}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231031 15:31:37.469" level="INFO">${LAST ASKS VALUE} = </msg>
+<status status="PASS" starttime="20231031 15:31:37.469" endtime="20231031 15:31:37.469"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:37.469" endtime="20231031 15:31:37.469"/>
+</kw>
+<test id="s1-t1" name="Open browser and navigate to Coinswitch URL" line="10">
+<kw name="Open browser and navigate to Coinswitch URL" library="Keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${WebDriver}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231031 15:31:37.469" level="INFO">Opening browser 'chrome' to base url 'https://coinswitch.co/pro/'.</msg>
+<status status="PASS" starttime="20231031 15:31:37.469" endtime="20231031 15:31:41.935"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231031 15:31:41.935" endtime="20231031 15:31:42.066"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Coinswitch homepage is displayed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:42.066" endtime="20231031 15:31:42.066"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:37.469" endtime="20231031 15:31:42.066"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:37.469" endtime="20231031 15:31:42.066"/>
+</test>
+<test id="s1-t2" name="Verify the &quot;Trade Now&quot; button in the home page" line="14">
+<kw name="Given The User is on the homepage" library="Keywords">
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${Homepage}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20231031 15:31:42.096" level="INFO">${Homepage} = Secure and Efficient Crypto Trading: Buy and Sell Crypto on Multiple Exchanges</msg>
+<status status="PASS" starttime="20231031 15:31:42.074" endtime="20231031 15:31:42.096"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Homepage}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:42.096" endtime="20231031 15:31:42.096"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:42.074" endtime="20231031 15:31:42.096"/>
+</kw>
+<kw name="When The User clicks on the &quot;Trade Now&quot; button" library="Keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${TradeNow}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:42.104" level="INFO">Clicking button 'xpath = //button[contains(text(),"TRADE NOW")]'.</msg>
+<status status="PASS" starttime="20231031 15:31:42.096" endtime="20231031 15:31:48.466"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:42.096" endtime="20231031 15:31:48.466"/>
+</kw>
+<kw name="Then The User is redirected to the Trade Now page" library="Keywords">
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${TradeTitle}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20231031 15:31:49.156" level="INFO">${TradeTitle} = BTC to INR | Buy BTC in India at best price at ₹29,81,197 | CoinSwitch</msg>
+<status status="PASS" starttime="20231031 15:31:48.466" endtime="20231031 15:31:49.156"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${TradeTitle}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:49.156" endtime="20231031 15:31:49.156"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:48.466" endtime="20231031 15:31:49.156"/>
+</kw>
+<kw name="And The User handles the pop-ups" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Explore}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:49.156" endtime="20231031 15:31:49.857"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Explore}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:49.861" level="INFO">Clicking button 'xpath = //*[contains(text(),"EXPLORE")]'.</msg>
+<status status="PASS" starttime="20231031 15:31:49.857" endtime="20231031 15:31:50.650"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Skipall}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:50.650" endtime="20231031 15:31:50.810"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Skipall}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:50.810" level="INFO">Clicking element 'xpath = //*[@class='tw-cursor-pointer tw-text-sm tw-font-medium tw-text-gold-500']'.</msg>
+<status status="PASS" starttime="20231031 15:31:50.810" endtime="20231031 15:31:51.268"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Done}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:51.268" endtime="20231031 15:31:51.322"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Done}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:51.322" level="INFO">Clicking element 'xpath = //div[contains(text(),"Done")]'.</msg>
+<status status="PASS" starttime="20231031 15:31:51.322" endtime="20231031 15:31:51.633"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, -500);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231031 15:31:51.633" level="INFO">Executing JavaScript:
+window.scrollBy(0, -500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20231031 15:31:51.633" endtime="20231031 15:31:51.701"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:49.156" endtime="20231031 15:31:51.701"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:42.074" endtime="20231031 15:31:51.701"/>
+</test>
+<test id="s1-t3" name="Get price from Get Lowest Price field and get Lowest Price from API" line="20">
+<kw name="Select Option" library="Keywords">
+<arg>${GAS}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${option}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:51.701" endtime="20231031 15:31:51.758"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:51.758" level="INFO">Clicking element 'xpath = (//*[@class='tw-flex tw-h-[44px] tw-w-max tw-flex-col tw-justify-center'])[3]'.</msg>
+<status status="PASS" starttime="20231031 15:31:51.758" endtime="20231031 15:31:52.056"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:51.701" endtime="20231031 15:31:52.056"/>
+</kw>
+<kw name="Select Exchange" library="Keywords">
+<arg>${CoinSwitchX}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SelectExchange}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:52.056" endtime="20231031 15:31:52.597"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SelectExchange}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:52.597" level="INFO">Clicking element 'xpath = //*[contains(text(),"Select Exchange")]'.</msg>
+<status status="PASS" starttime="20231031 15:31:52.597" endtime="20231031 15:31:52.908"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SelectXchange}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:52.908" endtime="20231031 15:31:53.253"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SelectXchange}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:53.253" level="INFO">Clicking element 'xpath = //*[contains(text(),"CoinSwitchX")]'.</msg>
+<status status="PASS" starttime="20231031 15:31:53.253" endtime="20231031 15:31:53.382"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:52.056" endtime="20231031 15:31:53.382"/>
+</kw>
+<kw name="Get the lowest price from the Get Lowest Price field" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${GetLowest}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:53.382" endtime="20231031 15:31:53.417"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GetLowest}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:53.417" level="INFO">Clicking element 'name = limit_price'.</msg>
+<status status="PASS" starttime="20231031 15:31:53.417" endtime="20231031 15:31:53.555"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${Price}</var>
+<arg>${LimPrice}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231031 15:31:53.587" level="INFO">${Price} = 439.080</msg>
+<status status="PASS" starttime="20231031 15:31:53.555" endtime="20231031 15:31:53.587"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LimitPrice:${Price}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:53.587" endtime="20231031 15:31:53.587"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${LIMIT PRICE}</arg>
+<arg>${Price}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231031 15:31:53.587" level="INFO">${LIMIT PRICE} = 439.080</msg>
+<status status="PASS" starttime="20231031 15:31:53.587" endtime="20231031 15:31:53.602"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:53.382" endtime="20231031 15:31:53.602"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>5</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Get lowest price from API" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${GetLowest}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:53.602" endtime="20231031 15:31:53.630"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>Coinswitch</arg>
+<arg>https://coinswitch.co/pro</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231031 15:31:53.630" level="INFO">Creating Session using : alias=Coinswitch, url=https://coinswitch.co/pro, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231031 15:31:53.630" endtime="20231031 15:31:53.630"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:53.630" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231031 15:31:53.630" endtime="20231031 15:31:53.630"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:53.602" endtime="20231031 15:31:53.630"/>
+</kw>
+<kw name="Get Response" library="Keywords">
+<arg>${Sym3}</arg>
+<arg>${Ex1}</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${query_params}</var>
+<arg>symbol=${symbol}</arg>
+<arg>exchange=${exchange}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:53.630" level="INFO">${query_params} = {'symbol': 'gas,inr', 'exchange': 'csx'}</msg>
+<status status="PASS" starttime="20231031 15:31:53.630" endtime="20231031 15:31:53.630"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>Coinswitch</arg>
+<arg>/api/v1/realtime-rates/depth</arg>
+<arg>params=${query_params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231031 15:31:53.966" level="INFO">GET Request : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ path_url=/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231031 15:31:53.982" level="INFO">GET Response : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 31 Oct 2023 10:01:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'content-security-policy': "default-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com in1.clevertap-prod.com https://api.amplitude.com https://in.hotjar.com https://analytics.twitter.com https://stats.g.doubleclick.net https://*.clarity.ms https://api.smooch.io 'unsafe-inline';script-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://js-agent.newrelic.com *.nr-data.net https://static.hotjar.com https://script.hotjar.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.googletagmanager.com https://tagmanager.google.com static.clevertap.com in1.clevertap-prod.com https://d2r1yp2w7bby2u.cloudfront.net/js/clevertap.min.js https://static.cloudflareinsights.com https://*.zdassets.com https://*.zendesk.com https://static.ads-twitter.com https://bat.bing.com https://*.clarity.ms https://api.smooch.io 'unsafe-inline';connect-src 'self' https://*.coinswitch.co wss://*.coinswitch.co *.nr-data.net https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://api.amplitude.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net ws://localhost:8002 https://*.zdassets.com https://*.zendesk.com wss://api.smooch.io https://*.clarity.ms;img-src 'self' blob: data: *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://*.google-analytics.com https://stats.g.doubleclick.net *.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://t.co https://*.zdassets.com https://*.zendesk.com https://analytics.twitter.com/1/i/adsct https://bat.bing.com/action/0 https://*.clarity.ms;style-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://tagmanager.google.com https://fonts.googleapis.com 'unsafe-inline';font-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://script.hotjar.com https://fonts.gstatic.com data:;frame-src 'self' *.coinswitch.co https://vars.hotjar.com form.typeform.com;frame-ancestors 'self' *.coinswitch.co;object-src 'none';base-uri 'none'", 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'Cache-Control': 'private, no-cache, no-store, max-age=0', 'etag': 'W/"d7c-nhLozLk+4rTHzdq0N5OdGHEf1e4"', 'vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=FmHTH6kv%2FRkwYbqCIaLQKxa3HoWjlYi2Xkab9eQSo04TWEhasVEeeoO3YMLrSq0Eh7AoJmhqzHwYPIcr1UNCZyIub9n5GtCQb7DVlg%2F%2FfnaYb4Vtk5rQoliNUbDJrLU%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '81eb0f2f99716bd6-SIN'} 
+ body={"success":true,"data":{"s":"GAS,INR","timestamp":1698746513706,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],["430.442","45.6"],["429.364","39.5"],["429.189","30.2"],["429.013","23.3"],["428.751","27.9"],["428.607","45.8"],["428.532","37.3"],["425","14.1"],["421.968","1.9"],["418.5","2.4"],["417.705","5.3"],["415.5","3.9"],["415","2.4"],["414.978","1.9"],["414.896","2.4"],["412","1.9"],["410.874","0.7"],["410.323","24.4"],["410","3.4"],["409","31.8"],["408","2.5"],["402.741","6.4"],["400.61","0.5"],["400.202","13.5"],["400","15"],["390.964","0.3"],["390","2"],["380.06","0.5"],["380","22.2"],["379.625","46.9"],["378.603","2.1"],["375","0.5"],["374.465","1.3"],["371.476","0.5"],["371.405","0.9"],["370","95.3"],["360","5.6"],["351.847","8.5"],["350.878","0.3"],["350.387","3.7"],["350","8.5"],["343","1.5"],["340.584","1"],["340","6.4"],["328","0.5"],["320.296","2.5"],["307.735","1.7"],["305.706","0.6"],["300","5.4"],["290","15.6"],["285","3.5"],["282.063","2.1"],["280","0.4"],["265","5.7"],["260","5.8"],["255","3.9"],["250","233.6"],["245.386","9.7"],["245","24.5"],["244.079","4.1"],["240","693.1"],["238.565","8.1"],["237.881","8.7"],["235","11.3"],["233.999","1.1"],["233.995","0.9"],["233.559","4.3"],["230.457","2.2"],["230","10.8"],["227.806","4.4"],["225","28"],["222.87","2.2"],["222.56","4.5"],["222.406","11.2"],["220.549","2.3"],["220","373.9"],["218","28"],["217.514","0.5"],["217","21.8"],["216.18","4.6"],["216.037","2.6"],["215","14"],["214.274","1.6"],["213.798","2.3"],["212.46","2.2"],["212","0.5"],["210.096","1.7"],["210","0.6"],["205","28"],["204.919","48.8"],["204","0.7"],["201.446","15.6"],["200.602","12.8"],["200.503","5.1"]],"asks":[["439.08","2.8"],["439.583","45.3"],["441.052","45.3"],["441.227","45.3"],["441.281","45.2"],["442.935","45.1"],["443.11","40.6"],["443.372","49.6"],["444.031","44.9"],["446.174","38.1"],["446.349","29.1"],["446.524","22.3"],["446.787","26.8"],["447.006","35.7"],["448.028","21.9"],["450","15.5"],["455","9.2"],["457.52","2"],["460","6.7"],["465","0.2"],["465.5","69.5"],["466.762","197.4"],["469.922","2.9"],["470","15.8"],["470.378","4"],["470.8","205.2"],["471","2"],["471.186","9.1"],["471.941","1.2"],["472","11"],["474","11.1"],["474.663","0.5"],["475","3.1"],["477","9.1"],["478","68.7"],["478.5","170"],["479.006","221.7"],["479.307","10"],["480","274.9"],["480.48","4.6"],["480.925","1.3"],["480.942","13.5"],["481.216","3.3"],["481.333","1.1"],["482.679","41.3"],["482.9","0.7"],["483.181","13.3"],["483.274","53.9"],["483.596","6.4"],["483.888","1.4"],["483.969","0.9"],["484","95.4"],["484.105","23.9"],["484.755","30.6"],["484.962","1.2"],["485","20.8"],["485.168","0.2"],["485.434","42.4"],["485.621","27.4"],["487","112.8"],["487.657","1"],["488.015","15.4"],["488.53","4.3"],["489","18"],["490","32"],["490.097","0.6"],["490.5","8.8"],["490.538","217"],["491","0.2"],["491.823","18.3"],["492","5"],["492.077","0.3"],["492.214","1.1"],["492.615","1.4"],["493.107","3"],["493.446","110.9"],["494.658","11.4"],["495.445","2.3"],["497.272","27.4"],["497.53","0.7"],["498.426","3.8"],["499","2.9"],["499.528","219.6"],["499.784","6.8"],["500","251"],["500.134","5.5"],["500.566","3.8"],["500.64","4.9"],["504.806","10.8"],["509.651","10.1"],["510","33"],["510.223","0.5"],["515","52.5"],["515.371","1"],["515.497","13.1"],["518","0.3"],["520","11.7"],["525","34.7"],["526","2"],["527.71","0.9"]]}} 
+ </msg>
+<msg timestamp="20231031 15:31:53.982" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'coinswitch.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231031 15:31:53.982" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:53.630" endtime="20231031 15:31:53.982"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231031 15:31:53.982" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:53.982" endtime="20231031 15:31:53.982"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:53.982" endtime="20231031 15:31:54.010"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json_string}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:54.010" level="INFO">${json_string} = {"success":true,"data":{"s":"GAS,INR","timestamp":1698746513706,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],["430.442","45.6"],...</msg>
+<status status="PASS" starttime="20231031 15:31:54.010" endtime="20231031 15:31:54.010"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${response_dict}</var>
+<arg>json.loads('''${json_string}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231031 15:31:54.018" level="INFO">${response_dict} = {'success': True, 'data': {'s': 'GAS,INR', 'timestamp': 1698746513706, 'bids': [['434.486', '46'], ['434.31', '46'], ['432.974', '18.4'], ['432.603', '46.2'], ['432.428', '41.6'], ['432.165', '50.9'],...</msg>
+<status status="PASS" starttime="20231031 15:31:54.010" endtime="20231031 15:31:54.018"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${asks_list}</var>
+<arg>${response_dict['data']['asks']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:54.018" level="INFO">${asks_list} = [['439.08', '2.8'], ['439.583', '45.3'], ['441.052', '45.3'], ['441.227', '45.3'], ['441.281', '45.2'], ['442.935', '45.1'], ['443.11', '40.6'], ['443.372', '49.6'], ['444.031', '44.9'], ['446.174', '...</msg>
+<status status="PASS" starttime="20231031 15:31:54.018" endtime="20231031 15:31:54.018"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${last_asks_value}</var>
+<arg>${asks_list[0][0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:54.025" level="INFO">${last_asks_value} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:54.018" endtime="20231031 15:31:54.025"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Last asks Value: ${last_asks_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:54.025" endtime="20231031 15:31:54.030"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${LAST ASKS VALUE}</arg>
+<arg>${last_asks_value}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231031 15:31:54.032" level="INFO">${LAST ASKS VALUE} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:54.032" endtime="20231031 15:31:54.032"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:53.630" endtime="20231031 15:31:54.032"/>
+</kw>
+<kw name="Assertion" library="Keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>LimitPrice:${LIMIT PRICE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:54.032" endtime="20231031 15:31:54.032"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LastAsks:${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:54.032" endtime="20231031 15:31:54.032"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${LIMIT PRICE}</arg>
+<arg>${LAST ASKS VALUE}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20231031 15:31:54.032" endtime="20231031 15:31:54.032"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LowestPrice assertion passed:${LIMIT PRICE}==${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:54.032" endtime="20231031 15:31:54.032"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231031 15:31:55.033" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231031 15:31:54.032" endtime="20231031 15:31:55.033"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:54.032" endtime="20231031 15:31:55.033"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:53.602" endtime="20231031 15:31:55.033"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get lowest price from API" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${GetLowest}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:55.033" endtime="20231031 15:31:55.124"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>Coinswitch</arg>
+<arg>https://coinswitch.co/pro</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231031 15:31:55.124" level="INFO">Creating Session using : alias=Coinswitch, url=https://coinswitch.co/pro, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231031 15:31:55.124" endtime="20231031 15:31:55.124"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:55.124" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231031 15:31:55.124" endtime="20231031 15:31:55.124"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:55.033" endtime="20231031 15:31:55.124"/>
+</kw>
+<kw name="Get Response" library="Keywords">
+<arg>${Sym3}</arg>
+<arg>${Ex1}</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${query_params}</var>
+<arg>symbol=${symbol}</arg>
+<arg>exchange=${exchange}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:55.130" level="INFO">${query_params} = {'symbol': 'gas,inr', 'exchange': 'csx'}</msg>
+<status status="PASS" starttime="20231031 15:31:55.124" endtime="20231031 15:31:55.130"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>Coinswitch</arg>
+<arg>/api/v1/realtime-rates/depth</arg>
+<arg>params=${query_params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231031 15:31:55.258" level="INFO">GET Request : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ path_url=/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231031 15:31:55.258" level="INFO">GET Response : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 31 Oct 2023 10:01:55 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'content-security-policy': "default-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com in1.clevertap-prod.com https://api.amplitude.com https://in.hotjar.com https://analytics.twitter.com https://stats.g.doubleclick.net https://*.clarity.ms https://api.smooch.io 'unsafe-inline';script-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://js-agent.newrelic.com *.nr-data.net https://static.hotjar.com https://script.hotjar.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.googletagmanager.com https://tagmanager.google.com static.clevertap.com in1.clevertap-prod.com https://d2r1yp2w7bby2u.cloudfront.net/js/clevertap.min.js https://static.cloudflareinsights.com https://*.zdassets.com https://*.zendesk.com https://static.ads-twitter.com https://bat.bing.com https://*.clarity.ms https://api.smooch.io 'unsafe-inline';connect-src 'self' https://*.coinswitch.co wss://*.coinswitch.co *.nr-data.net https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://api.amplitude.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net ws://localhost:8002 https://*.zdassets.com https://*.zendesk.com wss://api.smooch.io https://*.clarity.ms;img-src 'self' blob: data: *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://*.google-analytics.com https://stats.g.doubleclick.net *.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://t.co https://*.zdassets.com https://*.zendesk.com https://analytics.twitter.com/1/i/adsct https://bat.bing.com/action/0 https://*.clarity.ms;style-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://tagmanager.google.com https://fonts.googleapis.com 'unsafe-inline';font-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://script.hotjar.com https://fonts.gstatic.com data:;frame-src 'self' *.coinswitch.co https://vars.hotjar.com form.typeform.com;frame-ancestors 'self' *.coinswitch.co;object-src 'none';base-uri 'none'", 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'Cache-Control': 'private, no-cache, no-store, max-age=0', 'etag': 'W/"d7d-yYQeIQV1hxXRu1uaXF7/oofExRo"', 'vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=DpV4uyKFQxTNVeEj%2FYHM6PACy3jBAcWe08B4dl65HXHADcWyhMr7rshsM3jyyChLSLe%2FmZRRCcwIG%2BCMrtwaloC94Som2aMAgffQrOfa97wNO%2FhJgpaDOvT7LBL3C9I%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '81eb0f383c1d4448-BOM'} 
+ body={"success":true,"data":{"s":"GAS,INR","timestamp":1698746515147,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.644","45.3"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],["430.442","45.6"],["429.364","39.5"],["429.189","30.2"],["429.013","23.3"],["428.751","27.9"],["428.607","45.8"],["428.532","37.3"],["425","14.1"],["421.968","1.9"],["418.5","2.4"],["417.705","5.3"],["415.5","3.9"],["415","2.4"],["414.978","1.9"],["414.896","2.4"],["412","1.9"],["410.874","0.7"],["410.323","24.4"],["410","3.4"],["409","31.8"],["408","2.5"],["402.741","6.4"],["400.61","0.5"],["400.202","13.5"],["400","15"],["390.964","0.3"],["390","2"],["380.06","0.5"],["380","22.2"],["379.625","46.9"],["378.603","2.1"],["375","0.5"],["374.465","1.3"],["371.476","0.5"],["371.405","0.9"],["370","95.3"],["360","5.6"],["351.847","8.5"],["350.878","0.3"],["350.387","3.7"],["350","8.5"],["343","1.5"],["340.584","1"],["340","6.4"],["328","0.5"],["320.296","2.5"],["307.735","1.7"],["305.706","0.6"],["300","5.4"],["290","15.6"],["285","3.5"],["282.063","2.1"],["280","0.4"],["265","5.7"],["260","5.8"],["255","3.9"],["250","233.6"],["245.386","9.7"],["245","24.5"],["244.079","4.1"],["240","693.1"],["238.565","8.1"],["237.881","8.7"],["235","11.3"],["233.999","1.1"],["233.995","0.9"],["233.559","4.3"],["230.457","2.2"],["230","10.8"],["227.806","4.4"],["225","28"],["222.87","2.2"],["222.56","4.5"],["222.406","11.2"],["220.549","2.3"],["220","373.9"],["218","28"],["217.514","0.5"],["217","21.8"],["216.18","4.6"],["216.037","2.6"],["215","14"],["214.274","1.6"],["213.798","2.3"],["212.46","2.2"],["212","0.5"],["210.096","1.7"],["210","0.6"],["205","28"],["204.919","48.8"],["204","0.7"],["201.446","15.6"],["200.602","12.8"]],"asks":[["439.08","2.8"],["439.248","45.3"],["441.052","45.3"],["441.227","45.3"],["441.281","45.2"],["442.935","45.1"],["443.11","40.6"],["443.372","49.6"],["444.031","44.9"],["446.174","38.1"],["446.349","29.1"],["446.524","22.3"],["446.787","26.8"],["447.006","35.7"],["448.028","21.9"],["450","15.5"],["455","9.2"],["457.52","2"],["460","6.7"],["465","0.2"],["465.5","69.5"],["466.762","197.4"],["469.922","2.9"],["470","15.8"],["470.378","4"],["470.8","205.2"],["471","2"],["471.186","9.1"],["471.941","1.2"],["472","11"],["474","11.1"],["474.663","0.5"],["475","3.1"],["477","9.1"],["478","68.7"],["478.5","170"],["479.006","221.7"],["479.307","10"],["480","274.9"],["480.48","4.6"],["480.925","1.3"],["480.942","13.5"],["481.216","3.3"],["481.333","1.1"],["482.679","41.3"],["482.9","0.7"],["483.181","13.3"],["483.274","53.9"],["483.596","6.4"],["483.888","1.4"],["483.969","0.9"],["484","95.4"],["484.105","23.9"],["484.755","30.6"],["484.962","1.2"],["485","20.8"],["485.168","0.2"],["485.434","42.4"],["485.621","27.4"],["487","112.8"],["487.657","1"],["488.015","15.4"],["488.53","4.3"],["489","18"],["490","32"],["490.097","0.6"],["490.5","8.8"],["490.538","217"],["491","0.2"],["491.823","18.3"],["492","5"],["492.077","0.3"],["492.214","1.1"],["492.615","1.4"],["493.107","3"],["493.446","110.9"],["494.658","11.4"],["495.445","2.3"],["497.272","27.4"],["497.53","0.7"],["498.426","3.8"],["499","2.9"],["499.528","219.6"],["499.784","6.8"],["500","251"],["500.134","5.5"],["500.566","3.8"],["500.64","4.9"],["504.806","10.8"],["509.651","10.1"],["510","33"],["510.223","0.5"],["515","52.5"],["515.371","1"],["515.497","13.1"],["518","0.3"],["520","11.7"],["525","34.7"],["526","2"],["527.71","0.9"]]}} 
+ </msg>
+<msg timestamp="20231031 15:31:55.258" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'coinswitch.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231031 15:31:55.276" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:55.130" endtime="20231031 15:31:55.276"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231031 15:31:55.280" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:55.276" endtime="20231031 15:31:55.283"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:55.283" endtime="20231031 15:31:55.297"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json_string}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:55.297" level="INFO">${json_string} = {"success":true,"data":{"s":"GAS,INR","timestamp":1698746515147,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.644","45.3"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],...</msg>
+<status status="PASS" starttime="20231031 15:31:55.297" endtime="20231031 15:31:55.297"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${response_dict}</var>
+<arg>json.loads('''${json_string}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231031 15:31:55.305" level="INFO">${response_dict} = {'success': True, 'data': {'s': 'GAS,INR', 'timestamp': 1698746515147, 'bids': [['434.486', '46'], ['434.31', '46'], ['432.974', '18.4'], ['432.644', '45.3'], ['432.603', '46.2'], ['432.428', '41.6'],...</msg>
+<status status="PASS" starttime="20231031 15:31:55.297" endtime="20231031 15:31:55.305"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${asks_list}</var>
+<arg>${response_dict['data']['asks']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:55.305" level="INFO">${asks_list} = [['439.08', '2.8'], ['439.248', '45.3'], ['441.052', '45.3'], ['441.227', '45.3'], ['441.281', '45.2'], ['442.935', '45.1'], ['443.11', '40.6'], ['443.372', '49.6'], ['444.031', '44.9'], ['446.174', '...</msg>
+<status status="PASS" starttime="20231031 15:31:55.305" endtime="20231031 15:31:55.305"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${last_asks_value}</var>
+<arg>${asks_list[0][0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:55.305" level="INFO">${last_asks_value} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:55.305" endtime="20231031 15:31:55.305"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Last asks Value: ${last_asks_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:55.305" endtime="20231031 15:31:55.305"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${LAST ASKS VALUE}</arg>
+<arg>${last_asks_value}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231031 15:31:55.305" level="INFO">${LAST ASKS VALUE} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:55.305" endtime="20231031 15:31:55.305"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:55.124" endtime="20231031 15:31:55.305"/>
+</kw>
+<kw name="Assertion" library="Keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>LimitPrice:${LIMIT PRICE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:55.305" endtime="20231031 15:31:55.313"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LastAsks:${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:55.313" endtime="20231031 15:31:55.313"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${LIMIT PRICE}</arg>
+<arg>${LAST ASKS VALUE}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20231031 15:31:55.313" endtime="20231031 15:31:55.313"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LowestPrice assertion passed:${LIMIT PRICE}==${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:55.313" endtime="20231031 15:31:55.313"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231031 15:31:56.313" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231031 15:31:55.313" endtime="20231031 15:31:56.313"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:55.305" endtime="20231031 15:31:56.313"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:55.033" endtime="20231031 15:31:56.313"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get lowest price from API" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${GetLowest}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:56.313" endtime="20231031 15:31:56.360"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>Coinswitch</arg>
+<arg>https://coinswitch.co/pro</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231031 15:31:56.360" level="INFO">Creating Session using : alias=Coinswitch, url=https://coinswitch.co/pro, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231031 15:31:56.360" endtime="20231031 15:31:56.375"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:56.375" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231031 15:31:56.375" endtime="20231031 15:31:56.375"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:56.313" endtime="20231031 15:31:56.375"/>
+</kw>
+<kw name="Get Response" library="Keywords">
+<arg>${Sym3}</arg>
+<arg>${Ex1}</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${query_params}</var>
+<arg>symbol=${symbol}</arg>
+<arg>exchange=${exchange}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:56.375" level="INFO">${query_params} = {'symbol': 'gas,inr', 'exchange': 'csx'}</msg>
+<status status="PASS" starttime="20231031 15:31:56.375" endtime="20231031 15:31:56.375"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>Coinswitch</arg>
+<arg>/api/v1/realtime-rates/depth</arg>
+<arg>params=${query_params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231031 15:31:56.786" level="INFO">GET Request : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ path_url=/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231031 15:31:56.786" level="INFO">GET Response : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 31 Oct 2023 10:01:56 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'content-security-policy': "default-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com in1.clevertap-prod.com https://api.amplitude.com https://in.hotjar.com https://analytics.twitter.com https://stats.g.doubleclick.net https://*.clarity.ms https://api.smooch.io 'unsafe-inline';script-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://js-agent.newrelic.com *.nr-data.net https://static.hotjar.com https://script.hotjar.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.googletagmanager.com https://tagmanager.google.com static.clevertap.com in1.clevertap-prod.com https://d2r1yp2w7bby2u.cloudfront.net/js/clevertap.min.js https://static.cloudflareinsights.com https://*.zdassets.com https://*.zendesk.com https://static.ads-twitter.com https://bat.bing.com https://*.clarity.ms https://api.smooch.io 'unsafe-inline';connect-src 'self' https://*.coinswitch.co wss://*.coinswitch.co *.nr-data.net https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://api.amplitude.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net ws://localhost:8002 https://*.zdassets.com https://*.zendesk.com wss://api.smooch.io https://*.clarity.ms;img-src 'self' blob: data: *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://*.google-analytics.com https://stats.g.doubleclick.net *.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://t.co https://*.zdassets.com https://*.zendesk.com https://analytics.twitter.com/1/i/adsct https://bat.bing.com/action/0 https://*.clarity.ms;style-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://tagmanager.google.com https://fonts.googleapis.com 'unsafe-inline';font-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://script.hotjar.com https://fonts.gstatic.com data:;frame-src 'self' *.coinswitch.co https://vars.hotjar.com form.typeform.com;frame-ancestors 'self' *.coinswitch.co;object-src 'none';base-uri 'none'", 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'Cache-Control': 'private, no-cache, no-store, max-age=0', 'etag': 'W/"d7d-sg1f5FL5LuA4uIWaFXoq883av4U"', 'vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=a5FqlLh2SJR4XqAgGHGB1DHUYZbH9umkBJT%2BTGRGVV0h1meR62TJJ%2BTXWLxtbucbqm5oRAc3hRFPWZ5qD%2FXuVTA1Kf4qcJnBQqUPHLkqKrDIVhYOxT%2BG1mbnysZ0md4%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '81eb0f410dd96b99-SIN'} 
+ body={"success":true,"data":{"s":"GAS,INR","timestamp":1698746515959,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.644","45.3"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],["430.442","45.6"],["429.364","39.5"],["429.189","30.2"],["429.013","23.3"],["428.751","27.9"],["428.607","45.8"],["428.532","37.3"],["425","14.1"],["421.968","1.9"],["418.5","2.4"],["417.705","5.3"],["415.5","3.9"],["415","2.4"],["414.978","1.9"],["414.896","2.4"],["412","1.9"],["410.874","0.7"],["410.323","24.4"],["410","3.4"],["409","31.8"],["408","2.5"],["402.741","6.4"],["400.61","0.5"],["400.202","13.5"],["400","15"],["390.964","0.3"],["390","2"],["380.06","0.5"],["380","22.2"],["379.625","46.9"],["378.603","2.1"],["375","0.5"],["374.465","1.3"],["371.476","0.5"],["371.405","0.9"],["370","95.3"],["360","5.6"],["351.847","8.5"],["350.878","0.3"],["350.387","3.7"],["350","8.5"],["343","1.5"],["340.584","1"],["340","6.4"],["328","0.5"],["320.296","2.5"],["307.735","1.7"],["305.706","0.6"],["300","5.4"],["290","15.6"],["285","3.5"],["282.063","2.1"],["280","0.4"],["265","5.7"],["260","5.8"],["255","3.9"],["250","233.6"],["245.386","9.7"],["245","24.5"],["244.079","4.1"],["240","693.1"],["238.565","8.1"],["237.881","8.7"],["235","11.3"],["233.999","1.1"],["233.995","0.9"],["233.559","4.3"],["230.457","2.2"],["230","10.8"],["227.806","4.4"],["225","28"],["222.87","2.2"],["222.56","4.5"],["222.406","11.2"],["220.549","2.3"],["220","373.9"],["218","28"],["217.514","0.5"],["217","21.8"],["216.18","4.6"],["216.037","2.6"],["215","14"],["214.274","1.6"],["213.798","2.3"],["212.46","2.2"],["212","0.5"],["210.096","1.7"],["210","0.6"],["205","28"],["204.919","48.8"],["204","0.7"],["201.446","15.6"],["200.602","12.8"]],"asks":[["439.08","2.8"],["439.248","45.3"],["441.052","45.3"],["441.227","45.3"],["441.281","45.2"],["442.935","45.1"],["443.11","40.6"],["443.372","49.6"],["444.031","44.9"],["446.174","38.1"],["446.349","29.1"],["446.524","22.3"],["446.787","26.8"],["447.006","35.7"],["448.028","21.9"],["450","15.5"],["455","9.2"],["457.52","2"],["460","6.7"],["465","0.2"],["465.5","69.5"],["466.762","197.4"],["469.922","2.9"],["470","15.8"],["470.378","4"],["470.8","205.2"],["471","2"],["471.186","9.1"],["471.941","1.2"],["472","11"],["474","11.1"],["474.663","0.5"],["475","3.1"],["477","9.1"],["478","68.7"],["478.5","170"],["479.006","221.7"],["479.307","10"],["480","274.9"],["480.48","4.6"],["480.925","1.3"],["480.942","13.5"],["481.216","3.3"],["481.333","1.1"],["482.679","41.3"],["482.9","0.7"],["483.181","13.3"],["483.274","53.9"],["483.596","6.4"],["483.888","1.4"],["483.969","0.9"],["484","95.4"],["484.105","23.9"],["484.755","30.6"],["484.962","1.2"],["485","20.8"],["485.168","0.2"],["485.434","42.4"],["485.621","27.4"],["487","112.8"],["487.657","1"],["488.015","15.4"],["488.53","4.3"],["489","18"],["490","32"],["490.097","0.6"],["490.5","8.8"],["490.538","217"],["491","0.2"],["491.823","18.3"],["492","5"],["492.077","0.3"],["492.214","1.1"],["492.615","1.4"],["493.107","3"],["493.446","110.9"],["494.658","11.4"],["495.445","2.3"],["497.272","27.4"],["497.53","0.7"],["498.426","3.8"],["499","2.9"],["499.528","219.6"],["499.784","6.8"],["500","251"],["500.134","5.5"],["500.566","3.8"],["500.64","4.9"],["504.806","10.8"],["509.651","10.1"],["510","33"],["510.223","0.5"],["515","52.5"],["515.371","1"],["515.497","13.1"],["518","0.3"],["520","11.7"],["525","34.7"],["526","2"],["527.71","0.9"]]}} 
+ </msg>
+<msg timestamp="20231031 15:31:56.786" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'coinswitch.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231031 15:31:56.786" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:56.375" endtime="20231031 15:31:56.786"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231031 15:31:56.786" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:56.786" endtime="20231031 15:31:56.786"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:56.786" endtime="20231031 15:31:56.814"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json_string}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:56.823" level="INFO">${json_string} = {"success":true,"data":{"s":"GAS,INR","timestamp":1698746515959,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.644","45.3"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],...</msg>
+<status status="PASS" starttime="20231031 15:31:56.814" endtime="20231031 15:31:56.823"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${response_dict}</var>
+<arg>json.loads('''${json_string}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231031 15:31:56.823" level="INFO">${response_dict} = {'success': True, 'data': {'s': 'GAS,INR', 'timestamp': 1698746515959, 'bids': [['434.486', '46'], ['434.31', '46'], ['432.974', '18.4'], ['432.644', '45.3'], ['432.603', '46.2'], ['432.428', '41.6'],...</msg>
+<status status="PASS" starttime="20231031 15:31:56.823" endtime="20231031 15:31:56.823"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${asks_list}</var>
+<arg>${response_dict['data']['asks']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:56.823" level="INFO">${asks_list} = [['439.08', '2.8'], ['439.248', '45.3'], ['441.052', '45.3'], ['441.227', '45.3'], ['441.281', '45.2'], ['442.935', '45.1'], ['443.11', '40.6'], ['443.372', '49.6'], ['444.031', '44.9'], ['446.174', '...</msg>
+<status status="PASS" starttime="20231031 15:31:56.823" endtime="20231031 15:31:56.823"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${last_asks_value}</var>
+<arg>${asks_list[0][0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:56.830" level="INFO">${last_asks_value} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:56.823" endtime="20231031 15:31:56.830"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Last asks Value: ${last_asks_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:56.830" endtime="20231031 15:31:56.830"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${LAST ASKS VALUE}</arg>
+<arg>${last_asks_value}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231031 15:31:56.830" level="INFO">${LAST ASKS VALUE} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:56.830" endtime="20231031 15:31:56.830"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:56.375" endtime="20231031 15:31:56.830"/>
+</kw>
+<kw name="Assertion" library="Keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>LimitPrice:${LIMIT PRICE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:56.830" endtime="20231031 15:31:56.836"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LastAsks:${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:56.836" endtime="20231031 15:31:56.836"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${LIMIT PRICE}</arg>
+<arg>${LAST ASKS VALUE}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20231031 15:31:56.836" endtime="20231031 15:31:56.836"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LowestPrice assertion passed:${LIMIT PRICE}==${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:56.836" endtime="20231031 15:31:56.836"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231031 15:31:57.837" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231031 15:31:56.836" endtime="20231031 15:31:57.837"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:56.830" endtime="20231031 15:31:57.837"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:56.313" endtime="20231031 15:31:57.837"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get lowest price from API" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${GetLowest}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:57.837" endtime="20231031 15:31:57.936"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>Coinswitch</arg>
+<arg>https://coinswitch.co/pro</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231031 15:31:57.936" level="INFO">Creating Session using : alias=Coinswitch, url=https://coinswitch.co/pro, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231031 15:31:57.936" endtime="20231031 15:31:57.936"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:57.936" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231031 15:31:57.936" endtime="20231031 15:31:57.936"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:57.837" endtime="20231031 15:31:57.936"/>
+</kw>
+<kw name="Get Response" library="Keywords">
+<arg>${Sym3}</arg>
+<arg>${Ex1}</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${query_params}</var>
+<arg>symbol=${symbol}</arg>
+<arg>exchange=${exchange}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:57.936" level="INFO">${query_params} = {'symbol': 'gas,inr', 'exchange': 'csx'}</msg>
+<status status="PASS" starttime="20231031 15:31:57.936" endtime="20231031 15:31:57.936"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>Coinswitch</arg>
+<arg>/api/v1/realtime-rates/depth</arg>
+<arg>params=${query_params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231031 15:31:58.155" level="INFO">GET Request : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ path_url=/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231031 15:31:58.155" level="INFO">GET Response : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 31 Oct 2023 10:01:58 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'content-security-policy': "default-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com in1.clevertap-prod.com https://api.amplitude.com https://in.hotjar.com https://analytics.twitter.com https://stats.g.doubleclick.net https://*.clarity.ms https://api.smooch.io 'unsafe-inline';script-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://js-agent.newrelic.com *.nr-data.net https://static.hotjar.com https://script.hotjar.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.googletagmanager.com https://tagmanager.google.com static.clevertap.com in1.clevertap-prod.com https://d2r1yp2w7bby2u.cloudfront.net/js/clevertap.min.js https://static.cloudflareinsights.com https://*.zdassets.com https://*.zendesk.com https://static.ads-twitter.com https://bat.bing.com https://*.clarity.ms https://api.smooch.io 'unsafe-inline';connect-src 'self' https://*.coinswitch.co wss://*.coinswitch.co *.nr-data.net https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://api.amplitude.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net ws://localhost:8002 https://*.zdassets.com https://*.zendesk.com wss://api.smooch.io https://*.clarity.ms;img-src 'self' blob: data: *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://*.google-analytics.com https://stats.g.doubleclick.net *.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://t.co https://*.zdassets.com https://*.zendesk.com https://analytics.twitter.com/1/i/adsct https://bat.bing.com/action/0 https://*.clarity.ms;style-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://tagmanager.google.com https://fonts.googleapis.com 'unsafe-inline';font-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://script.hotjar.com https://fonts.gstatic.com data:;frame-src 'self' *.coinswitch.co https://vars.hotjar.com form.typeform.com;frame-ancestors 'self' *.coinswitch.co;object-src 'none';base-uri 'none'", 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'Cache-Control': 'private, no-cache, no-store, max-age=0', 'etag': 'W/"d7d-AYvMMh4/lJjO7OWdYlrrQWdAAS8"', 'vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=itkXjtnKYjQNxlahFZKJyK50U19lnw3Wyl%2FX9MvM9Ax5MIDqYY9G8XQsgOBJMU39ond%2BY6nV%2BSHw5V3gWPqwRPnVKTpspDamzzEMEMSd9m76NDNM31cT%2FOe2FNqRuK8%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '81eb0f4a2eba85d6-BOM'} 
+ body={"success":true,"data":{"s":"GAS,INR","timestamp":1698746517391,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.644","45.3"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],["430.442","45.6"],["429.364","39.5"],["429.189","30.2"],["429.013","23.3"],["428.751","27.9"],["428.607","45.8"],["428.532","37.3"],["425","14.1"],["421.968","1.9"],["418.5","2.4"],["417.705","5.3"],["415.5","3.9"],["415","2.4"],["414.978","1.9"],["414.896","2.4"],["412","1.9"],["410.874","0.7"],["410.323","24.4"],["410","3.4"],["409","31.8"],["408","2.5"],["402.741","6.4"],["400.61","0.5"],["400.202","13.5"],["400","15"],["390.964","0.3"],["390","2"],["380.06","0.5"],["380","22.2"],["379.625","46.9"],["378.603","2.1"],["375","0.5"],["374.465","1.3"],["371.476","0.5"],["371.405","0.9"],["370","95.3"],["360","5.6"],["351.847","8.5"],["350.878","0.3"],["350.387","3.7"],["350","8.5"],["343","1.5"],["340.584","1"],["340","6.4"],["328","0.5"],["320.296","2.5"],["307.735","1.7"],["305.706","0.6"],["300","5.4"],["290","15.6"],["285","3.5"],["282.063","2.1"],["280","0.4"],["265","5.7"],["260","5.8"],["255","3.9"],["250","233.6"],["245.386","9.7"],["245","24.5"],["244.079","4.1"],["240","693.1"],["238.565","8.1"],["237.881","8.7"],["235","11.3"],["233.999","1.1"],["233.995","0.9"],["233.559","4.3"],["230.457","2.2"],["230","10.8"],["227.806","4.4"],["225","28"],["222.87","2.2"],["222.56","4.5"],["222.406","11.2"],["220.549","2.3"],["220","373.9"],["218","28"],["217.514","0.5"],["217","21.8"],["216.18","4.6"],["216.037","2.6"],["215","14"],["214.274","1.6"],["213.798","2.3"],["212.46","2.2"],["212","0.5"],["210.096","1.7"],["210","0.6"],["205","28"],["204.919","48.8"],["204","0.7"],["201.446","15.6"],["200.602","12.8"]],"asks":[["439.08","2.8"],["439.248","45.3"],["441.052","45.3"],["441.227","45.3"],["441.281","45.2"],["442.935","45.1"],["443.11","40.6"],["443.372","49.6"],["444.031","44.9"],["446.174","38.1"],["446.349","29.1"],["446.524","22.3"],["446.787","26.8"],["447.006","35.7"],["448.028","21.9"],["450","15.5"],["455","9.2"],["457.52","2"],["460","6.7"],["465","0.2"],["465.5","69.5"],["466.762","197.4"],["469.922","2.9"],["470","15.8"],["470.378","4"],["470.8","205.2"],["471","2"],["471.186","9.1"],["471.941","1.2"],["472","11"],["474","11.1"],["474.663","0.5"],["475","3.1"],["477","9.1"],["478","68.7"],["478.5","170"],["479.006","221.7"],["479.307","10"],["480","274.9"],["480.48","4.6"],["480.925","1.3"],["480.942","13.5"],["481.216","3.3"],["481.333","1.1"],["482.679","41.3"],["482.9","0.7"],["483.181","13.3"],["483.274","53.9"],["483.596","6.4"],["483.888","1.4"],["483.969","0.9"],["484","95.4"],["484.105","23.9"],["484.755","30.6"],["484.962","1.2"],["485","20.8"],["485.168","0.2"],["485.434","42.4"],["485.621","27.4"],["487","112.8"],["487.657","1"],["488.015","15.4"],["488.53","4.3"],["489","18"],["490","32"],["490.097","0.6"],["490.5","8.8"],["490.538","217"],["491","0.2"],["491.823","18.3"],["492","5"],["492.077","0.3"],["492.214","1.1"],["492.615","1.4"],["493.107","3"],["493.446","110.9"],["494.658","11.4"],["495.445","2.3"],["497.272","27.4"],["497.53","0.7"],["498.426","3.8"],["499","2.9"],["499.528","219.6"],["499.784","6.8"],["500","251"],["500.134","5.5"],["500.566","3.8"],["500.64","4.9"],["504.806","10.8"],["509.651","10.1"],["510","33"],["510.223","0.5"],["515","52.5"],["515.371","1"],["515.497","13.1"],["518","0.3"],["520","11.7"],["525","34.7"],["526","2"],["527.71","0.9"]]}} 
+ </msg>
+<msg timestamp="20231031 15:31:58.171" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'coinswitch.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231031 15:31:58.171" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:57.936" endtime="20231031 15:31:58.171"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231031 15:31:58.171" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:58.171" endtime="20231031 15:31:58.171"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:58.171" endtime="20231031 15:31:58.194"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json_string}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:58.197" level="INFO">${json_string} = {"success":true,"data":{"s":"GAS,INR","timestamp":1698746517391,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.644","45.3"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],...</msg>
+<status status="PASS" starttime="20231031 15:31:58.194" endtime="20231031 15:31:58.197"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${response_dict}</var>
+<arg>json.loads('''${json_string}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231031 15:31:58.206" level="INFO">${response_dict} = {'success': True, 'data': {'s': 'GAS,INR', 'timestamp': 1698746517391, 'bids': [['434.486', '46'], ['434.31', '46'], ['432.974', '18.4'], ['432.644', '45.3'], ['432.603', '46.2'], ['432.428', '41.6'],...</msg>
+<status status="PASS" starttime="20231031 15:31:58.197" endtime="20231031 15:31:58.206"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${asks_list}</var>
+<arg>${response_dict['data']['asks']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:58.206" level="INFO">${asks_list} = [['439.08', '2.8'], ['439.248', '45.3'], ['441.052', '45.3'], ['441.227', '45.3'], ['441.281', '45.2'], ['442.935', '45.1'], ['443.11', '40.6'], ['443.372', '49.6'], ['444.031', '44.9'], ['446.174', '...</msg>
+<status status="PASS" starttime="20231031 15:31:58.206" endtime="20231031 15:31:58.206"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${last_asks_value}</var>
+<arg>${asks_list[0][0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:58.213" level="INFO">${last_asks_value} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:58.213" endtime="20231031 15:31:58.213"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Last asks Value: ${last_asks_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:58.213" endtime="20231031 15:31:58.213"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${LAST ASKS VALUE}</arg>
+<arg>${last_asks_value}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231031 15:31:58.218" level="INFO">${LAST ASKS VALUE} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:58.213" endtime="20231031 15:31:58.218"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:57.936" endtime="20231031 15:31:58.218"/>
+</kw>
+<kw name="Assertion" library="Keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>LimitPrice:${LIMIT PRICE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:58.218" endtime="20231031 15:31:58.218"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LastAsks:${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:58.218" endtime="20231031 15:31:58.218"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${LIMIT PRICE}</arg>
+<arg>${LAST ASKS VALUE}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20231031 15:31:58.218" endtime="20231031 15:31:58.218"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LowestPrice assertion passed:${LIMIT PRICE}==${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:58.218" endtime="20231031 15:31:58.218"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231031 15:31:59.219" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231031 15:31:58.218" endtime="20231031 15:31:59.219"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:58.218" endtime="20231031 15:31:59.219"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:57.837" endtime="20231031 15:31:59.219"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get lowest price from API" library="Keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${GetLowest}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231031 15:31:59.219" endtime="20231031 15:31:59.280"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>Coinswitch</arg>
+<arg>https://coinswitch.co/pro</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231031 15:31:59.280" level="INFO">Creating Session using : alias=Coinswitch, url=https://coinswitch.co/pro, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231031 15:31:59.280" endtime="20231031 15:31:59.280"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:59.280" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231031 15:31:59.280" endtime="20231031 15:31:59.280"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:59.219" endtime="20231031 15:31:59.280"/>
+</kw>
+<kw name="Get Response" library="Keywords">
+<arg>${Sym3}</arg>
+<arg>${Ex1}</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${query_params}</var>
+<arg>symbol=${symbol}</arg>
+<arg>exchange=${exchange}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231031 15:31:59.288" level="INFO">${query_params} = {'symbol': 'gas,inr', 'exchange': 'csx'}</msg>
+<status status="PASS" starttime="20231031 15:31:59.280" endtime="20231031 15:31:59.288"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>Coinswitch</arg>
+<arg>/api/v1/realtime-rates/depth</arg>
+<arg>params=${query_params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231031 15:31:59.491" level="INFO">GET Request : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ path_url=/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231031 15:31:59.491" level="INFO">GET Response : url=https://coinswitch.co/pro/api/v1/realtime-rates/depth?symbol=gas%2Cinr&amp;exchange=csx 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 31 Oct 2023 10:01:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'content-security-policy': "default-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com in1.clevertap-prod.com https://api.amplitude.com https://in.hotjar.com https://analytics.twitter.com https://stats.g.doubleclick.net https://*.clarity.ms https://api.smooch.io 'unsafe-inline';script-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://js-agent.newrelic.com *.nr-data.net https://static.hotjar.com https://script.hotjar.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.googletagmanager.com https://tagmanager.google.com static.clevertap.com in1.clevertap-prod.com https://d2r1yp2w7bby2u.cloudfront.net/js/clevertap.min.js https://static.cloudflareinsights.com https://*.zdassets.com https://*.zendesk.com https://static.ads-twitter.com https://bat.bing.com https://*.clarity.ms https://api.smooch.io 'unsafe-inline';connect-src 'self' https://*.coinswitch.co wss://*.coinswitch.co *.nr-data.net https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://api.amplitude.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net ws://localhost:8002 https://*.zdassets.com https://*.zendesk.com wss://api.smooch.io https://*.clarity.ms;img-src 'self' blob: data: *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com cs-pro-assets-preprod.s3.ap-south-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://*.google-analytics.com https://stats.g.doubleclick.net *.googletagmanager.com https://ssl.gstatic.com https://www.gstatic.com https://t.co https://*.zdassets.com https://*.zendesk.com https://analytics.twitter.com/1/i/adsct https://bat.bing.com/action/0 https://*.clarity.ms;style-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://static.hotjar.com https://script.hotjar.com https://tagmanager.google.com https://fonts.googleapis.com 'unsafe-inline';font-src 'self' *.coinswitch.co *.s3.ap-southeast-1.amazonaws.com https://script.hotjar.com https://fonts.gstatic.com data:;frame-src 'self' *.coinswitch.co https://vars.hotjar.com form.typeform.com;frame-ancestors 'self' *.coinswitch.co;object-src 'none';base-uri 'none'", 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'Cache-Control': 'private, no-cache, no-store, max-age=0', 'etag': 'W/"d7d-2i7+jg94POxZJwBjhqwxfAsx2rQ"', 'vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=4f%2BkKTQscUp3YdljwdkAIw75egwaAzQN4gAdql6thAg4mVVeL3legYRepWHKh%2B8GXtpBnKEzBrNQY3RkTDIMMBVhCYVuYkOjHjDEH6dk5vi8WUjK83goLtI8XihPSeY%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '81eb0f5289498513-BOM'} 
+ body={"success":true,"data":{"s":"GAS,INR","timestamp":1698746518888,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.644","45.3"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],["430.442","45.6"],["429.364","39.5"],["429.189","30.2"],["429.013","23.3"],["428.751","27.9"],["428.607","45.8"],["428.532","37.3"],["425","14.1"],["421.968","1.9"],["418.5","2.4"],["417.705","5.3"],["415.5","3.9"],["415","2.4"],["414.978","1.9"],["414.896","2.4"],["412","1.9"],["410.874","0.7"],["410.323","24.4"],["410","3.4"],["409","31.8"],["408","2.5"],["402.741","6.4"],["400.61","0.5"],["400.202","13.5"],["400","15"],["390.964","0.3"],["390","2"],["380.06","0.5"],["380","22.2"],["379.625","46.9"],["378.603","2.1"],["375","0.5"],["374.465","1.3"],["371.476","0.5"],["371.405","0.9"],["370","95.3"],["360","5.6"],["351.847","8.5"],["350.878","0.3"],["350.387","3.7"],["350","8.5"],["343","1.5"],["340.584","1"],["340","6.4"],["328","0.5"],["320.296","2.5"],["307.735","1.7"],["305.706","0.6"],["300","5.4"],["290","15.6"],["285","3.5"],["282.063","2.1"],["280","0.4"],["265","5.7"],["260","5.8"],["255","3.9"],["250","233.6"],["245.386","9.7"],["245","24.5"],["244.079","4.1"],["240","693.1"],["238.565","8.1"],["237.881","8.7"],["235","11.3"],["233.999","1.1"],["233.995","0.9"],["233.559","4.3"],["230.457","2.2"],["230","10.8"],["227.806","4.4"],["225","28"],["222.87","2.2"],["222.56","4.5"],["222.406","11.2"],["220.549","2.3"],["220","373.9"],["218","28"],["217.514","0.5"],["217","21.8"],["216.18","4.6"],["216.037","2.6"],["215","14"],["214.274","1.6"],["213.798","2.3"],["212.46","2.2"],["212","0.5"],["210.096","1.7"],["210","0.6"],["205","28"],["204.919","48.8"],["204","0.7"],["201.446","15.6"],["200.602","12.8"]],"asks":[["439.08","2.8"],["439.248","45.3"],["441.052","45.3"],["441.227","45.3"],["441.281","45.2"],["442.935","45.1"],["443.11","40.6"],["443.372","49.6"],["444.031","44.9"],["446.174","38.1"],["446.349","29.1"],["446.524","22.3"],["446.787","26.8"],["447.006","35.7"],["448.028","21.9"],["450","15.5"],["455","9.2"],["457.52","2"],["460","6.7"],["465","0.2"],["465.5","69.5"],["466.762","197.4"],["469.922","2.9"],["470","15.8"],["470.378","4"],["470.8","205.2"],["471","2"],["471.186","9.1"],["471.941","1.2"],["472","11"],["474","11.1"],["474.663","0.5"],["475","3.1"],["477","9.1"],["478","68.7"],["478.5","170"],["479.006","221.7"],["479.307","10"],["480","274.9"],["480.48","4.6"],["480.925","1.3"],["480.942","13.5"],["481.216","3.3"],["481.333","1.1"],["482.679","41.3"],["482.9","0.7"],["483.181","13.3"],["483.274","53.9"],["483.596","6.4"],["483.888","1.4"],["483.969","0.9"],["484","95.4"],["484.105","23.9"],["484.755","30.6"],["484.962","1.2"],["485","20.8"],["485.168","0.2"],["485.434","42.4"],["485.621","27.4"],["487","112.8"],["487.657","1"],["488.015","15.4"],["488.53","4.3"],["489","18"],["490","32"],["490.097","0.6"],["490.5","8.8"],["490.538","217"],["491","0.2"],["491.823","18.3"],["492","5"],["492.077","0.3"],["492.214","1.1"],["492.615","1.4"],["493.107","3"],["493.446","110.9"],["494.658","11.4"],["495.445","2.3"],["497.272","27.4"],["497.53","0.7"],["498.426","3.8"],["499","2.9"],["499.528","219.6"],["499.784","6.8"],["500","251"],["500.134","5.5"],["500.566","3.8"],["500.64","4.9"],["504.806","10.8"],["509.651","10.1"],["510","33"],["510.223","0.5"],["515","52.5"],["515.371","1"],["515.497","13.1"],["518","0.3"],["520","11.7"],["525","34.7"],["526","2"],["527.71","0.9"]]}} 
+ </msg>
+<msg timestamp="20231031 15:31:59.491" level="INFO">C:\Users\Dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'coinswitch.co'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231031 15:31:59.491" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:59.288" endtime="20231031 15:31:59.491"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231031 15:31:59.491" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231031 15:31:59.491" endtime="20231031 15:31:59.491"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:59.491" endtime="20231031 15:31:59.520"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${json_string}</var>
+<arg>${response.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:59.529" level="INFO">${json_string} = {"success":true,"data":{"s":"GAS,INR","timestamp":1698746518888,"bids":[["434.486","46"],["434.31","46"],["432.974","18.4"],["432.644","45.3"],["432.603","46.2"],["432.428","41.6"],["432.165","50.9"],...</msg>
+<status status="PASS" starttime="20231031 15:31:59.520" endtime="20231031 15:31:59.529"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${response_dict}</var>
+<arg>json.loads('''${json_string}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231031 15:31:59.531" level="INFO">${response_dict} = {'success': True, 'data': {'s': 'GAS,INR', 'timestamp': 1698746518888, 'bids': [['434.486', '46'], ['434.31', '46'], ['432.974', '18.4'], ['432.644', '45.3'], ['432.603', '46.2'], ['432.428', '41.6'],...</msg>
+<status status="PASS" starttime="20231031 15:31:59.529" endtime="20231031 15:31:59.531"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${asks_list}</var>
+<arg>${response_dict['data']['asks']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:59.531" level="INFO">${asks_list} = [['439.08', '2.8'], ['439.248', '45.3'], ['441.052', '45.3'], ['441.227', '45.3'], ['441.281', '45.2'], ['442.935', '45.1'], ['443.11', '40.6'], ['443.372', '49.6'], ['444.031', '44.9'], ['446.174', '...</msg>
+<status status="PASS" starttime="20231031 15:31:59.531" endtime="20231031 15:31:59.531"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${last_asks_value}</var>
+<arg>${asks_list[0][0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231031 15:31:59.531" level="INFO">${last_asks_value} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:59.531" endtime="20231031 15:31:59.531"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Last asks Value: ${last_asks_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:59.531" endtime="20231031 15:31:59.531"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${LAST ASKS VALUE}</arg>
+<arg>${last_asks_value}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231031 15:31:59.531" level="INFO">${LAST ASKS VALUE} = 439.08</msg>
+<status status="PASS" starttime="20231031 15:31:59.531" endtime="20231031 15:31:59.531"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:59.280" endtime="20231031 15:31:59.531"/>
+</kw>
+<kw name="Assertion" library="Keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>LimitPrice:${LIMIT PRICE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:59.531" endtime="20231031 15:31:59.546"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LastAsks:${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:59.550" endtime="20231031 15:31:59.550"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>${LIMIT PRICE}</arg>
+<arg>${LAST ASKS VALUE}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20231031 15:31:59.550" endtime="20231031 15:31:59.550"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>LowestPrice assertion passed:${LIMIT PRICE}==${LAST ASKS VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231031 15:31:59.550" endtime="20231031 15:31:59.550"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231031 15:32:00.550" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231031 15:31:59.550" endtime="20231031 15:32:00.550"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:59.531" endtime="20231031 15:32:00.550"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:59.219" endtime="20231031 15:32:00.550"/>
+</iter>
+<status status="PASS" starttime="20231031 15:31:53.602" endtime="20231031 15:32:00.550"/>
+</for>
+<status status="PASS" starttime="20231031 15:31:51.701" endtime="20231031 15:32:00.550"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231031 15:32:00.550" endtime="20231031 15:32:03.093"/>
+</kw>
+<status status="PASS" starttime="20231031 15:31:36.804" endtime="20231031 15:32:03.093"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
